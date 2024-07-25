@@ -1,0 +1,633 @@
+{
+	"info": {
+		"_postman_id": "2b697c0e-3572-4daa-8c29-5f562867882b",
+		"name": "Job-Search-API",
+		"description": "This particular app **describes searching for a job that is relevant to their domain or area of interest**. Different components can be created underneath index.js which serves as the root file. These components have program code for API calls, posting details of job search, error messages in case of wrong entry.\n\n**Features of Job Search App:**\n\n- _Filter option to get the required job._\n    \n- _Handles the user’s data._\n    \n- _Handles the company’s data._\n    \n- _Handles the Job Applications_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32909541"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\": \"Yasser\",\r\n\t\"lastName\": \"Ahmed\",\r\n\t\"username\": \"Yasser Ahmed\",\r\n\t\"email\": \"yasserahmed@gmail.com\",\r\n\t\"password\": \"yasserahmed123\",\r\n\t\"recoveryEmail\": \"yasserahmedrecovery@gmail.com\",\r\n\t\"DOB\": \"2002-07-04T00:00:00.000Z\",\r\n\t\"mobileNumber\": \"Number010\",\r\n\t\"role\":\"company_HR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/users/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"email\":\"ahmedamr@gmail.com\",\r\n\"password\":\"ahmedamr123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/users/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRjMzZkY2NiOTY2MTE0NzBkMDc3OCIsImVtYWlsIjoib21hcmhhYXNoZW1AZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Im9tYXJoYWFzaGVtcmVjb3ZlcnlAZ21haWwuY29tIiwiaWF0IjoxNzIxMDI1NDE3fQ.NEx0eDbVvkIr3iyeYBQsZQRTnYdo2CXd5WYyINl8LQY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\":\"Omara_Updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/users/update",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRiMzU4Mzk4NDgzY2NiOGUzNDZhMyIsImVtYWlsIjoiU3RyaW5nIiwicmVjb3ZlcnlFbWFpbCI6IlN0cmluZyIsImlhdCI6MTcyMTAyNDYwNn0.Ot1jJX_ZCcwCcBxAeKcii48R7twn2Zc90dNwhEy_Mow",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/users/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRjMzZkY2NiOTY2MTE0NzBkMDc3OCIsImVtYWlsIjoib21hcmhhYXNoZW1AZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Im9tYXJoYWFzaGVtcmVjb3ZlcnlAZ21haWwuY29tIiwiaWF0IjoxNzIxMDI1NDE3fQ.NEx0eDbVvkIr3iyeYBQsZQRTnYdo2CXd5WYyINl8LQY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3687/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User From Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3687/users/6694b3aa398483ccb8e346a7",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								"6694b3aa398483ccb8e346a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRjMzZkY2NiOTY2MTE0NzBkMDc3OCIsImVtYWlsIjoib21hcmhhYXNoZW1AZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Im9tYXJoYWFzaGVtcmVjb3ZlcnlAZ21haWwuY29tIiwiaWF0IjoxNzIxMDI1NDE3fQ.NEx0eDbVvkIr3iyeYBQsZQRTnYdo2CXd5WYyINl8LQY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"omarhaashem123\",\r\n    \"newPassword\": \"newomar123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/users/updatePassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get With Recovery Email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recoveryEmail\":\"ahmedamrrecovery@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/users/getusers/byrecovery",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"users",
+								"getusers",
+								"byrecovery"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Add Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwNjczODR9.HsClnk8mVtx-3ROve2Hda_vMUn5z9NHTBgOvO6PG-lc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"Telepreformance\",\r\n    \"description\": \"CustomerServiceCompany\",\r\n    \"industry\": \"CustomerService\",\r\n    \"address\": \"OneKattameya\",\r\n    \"numberOfEmployees\": 2452,\r\n    \"companyEmail\": \"hr@telepreformance.com\",\r\n    \"companyHR\": \"6694d0abf60e2a5426d6ca0d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/company",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwNjczODR9.HsClnk8mVtx-3ROve2Hda_vMUn5z9NHTBgOvO6PG-lc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberOfEmployees\": 2472\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/company",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwNjczODR9.HsClnk8mVtx-3ROve2Hda_vMUn5z9NHTBgOvO6PG-lc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3687/company",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwNjczODR9.HsClnk8mVtx-3ROve2Hda_vMUn5z9NHTBgOvO6PG-lc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3687/company/6695697f2329c78270d07bb0",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"company",
+								"6695697f2329c78270d07bb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company By Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwNjczODR9.HsClnk8mVtx-3ROve2Hda_vMUn5z9NHTBgOvO6PG-lc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"Telepreformance\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/company",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "Add Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwOTU4NjB9.NJfgsAsTmJhmem75zgaUnqrs1YFB3vuRUYnBG50EMuE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"String\",\r\n    \"jobLocation\":\"onsite\",\r\n    \"workiingTime\":\"full-time\",\r\n    \"seniorityLevel\": \"mid-level\",\r\n    \"jobDescription\": \"String\",\r\n    \"technicalSkills\": [\"skill1\",\"skill2\",\"skill3\"],\r\n    \"softSkills\": [\"skill1\",\"skill2\",\"skill3\"],\r\n    \"addedBy\": \"6694d0abf60e2a5426d6ca0d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwOTU4NjB9.NJfgsAsTmJhmem75zgaUnqrs1YFB3vuRUYnBG50EMuE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"jobTitle812\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/jobs/6695d77cabc1862b4ca65349",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"jobs",
+								"6695d77cabc1862b4ca65349"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwOTU4NjB9.NJfgsAsTmJhmem75zgaUnqrs1YFB3vuRUYnBG50EMuE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3687/jobs/6695dbfde2016cf899ab5e81",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"jobs",
+								"6695dbfde2016cf899ab5e81"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwOTU4NjB9.NJfgsAsTmJhmem75zgaUnqrs1YFB3vuRUYnBG50EMuE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Jobs For Company",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRkMGFiZjYwZTJhNTQyNmQ2Y2EwZCIsImVtYWlsIjoieWFzc2VyYWhtZWRAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6Inlhc3NlcmFobWVkcmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6ImNvbXBhbnlfSFIiLCJpYXQiOjE3MjEwOTU4NjB9.NJfgsAsTmJhmem75zgaUnqrs1YFB3vuRUYnBG50EMuE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3687/jobs/none?companyName=Telepreformance",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"jobs",
+								"none"
+							],
+							"query": [
+								{
+									"key": "companyName",
+									"value": "Telepreformance"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply to Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTRiM2FhMzk4NDgzY2NiOGUzNDZhNyIsImVtYWlsIjoiYWhtZWRhbXJAZ21haWwuY29tIiwicmVjb3ZlcnlFbWFpbCI6ImFobWVkYW1ycmVjb3ZlcnlAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjEwOTk4ODZ9.2Lt3MeD1x3yVwiB31ta5imFVtD0i3qPFhMe1HGf0DJY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobId\": \"6695d77cabc1862b4ca65349\",\r\n    \"userId\": \"6694c36dccb96611470d0778\",\r\n    \"userTechSkills\": [\"skill1\",\"skill2\"],\r\n    \"userSoftSkills\": [\"skill1\",\"skill2\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3687/jobs/new/application",
+							"host": [
+								"localhost"
+							],
+							"port": "3687",
+							"path": [
+								"jobs",
+								"new",
+								"application"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
